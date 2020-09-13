@@ -369,10 +369,61 @@ section:nth-of-type(7) {
   background-image: url("https://picsum.photos/id/743/600/400");
 }
 
+.section-dark {
+  background-color: #282e34 !important;
+  color: #f4f4f4 !important;
+}
+
 html, body {
   height: 100%;
   margin: 0;
   font-family: "Lato", sans-serif;
+}
+
+div {
+  position: absolute;
+  z-index: 1;
+  top: 7px;
+  left: 7px;
+}
+div [type=checkbox]:not(:checked), div [type=checkbox]:checked {
+  position: absolute;
+  left: -9999px;
+}
+div [type=checkbox]:not(:checked) + label, div [type=checkbox]:checked + label {
+  position: relative;
+  padding-left: 4em;
+  padding-top: 0.25em;
+  cursor: pointer;
+}
+div [type=checkbox]:not(:checked) + label:before, div [type=checkbox]:checked + label:before, div [type=checkbox]:not(:checked) + label:after, div [type=checkbox]:checked + label:after {
+  content: "";
+  position: absolute;
+  height: 1.5em;
+  transition: all 0.5s ease;
+}
+div [type=checkbox]:not(:checked) + label:before, div [type=checkbox]:checked + label:before {
+  left: 0;
+  top: 0;
+  width: 3em;
+  border: 2px solid #dddddd;
+  background: #dddddd;
+  border-radius: 1.1em;
+  z-index: -1;
+}
+div [type=checkbox]:not(:checked) + label:after, div [type=checkbox]:checked + label:after {
+  left: 0.15em;
+  top: 0.125em;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 1.5em;
+}
+div [type=checkbox]:checked + label:after {
+  left: 1.65em;
+}
+div [type=checkbox]:checked + label:before {
+  background-color: #72da67;
+  border-color: #72da67;
 }
 
 /*# sourceMappingURL=style.css.map */
